@@ -28,5 +28,18 @@ describe('User', function(){
       expect(u).to.be.instanceof(User);
     });
   });
-});
 
+  describe('#save', function(){
+    it('should save a user', function(){
+      var u = new User(),
+          o = {x:3, visible:'public', foo:'bar'};
+
+      u.baz = 'bim';
+      u.save(o, function(err, user){
+        expect(user.isVisible).to.be.true;
+        expect(user.foo).to.equal('bar');
+        expect(user.baz).to.equal('bim');
+      });
+    });
+  });
+});

@@ -1,7 +1,8 @@
 'use strict';
 
 var bcrypt = require('bcrypt'),
-    Mongo  = require('mongodb');
+    Mongo  = require('mongodb'),
+    _      = require('lodash');
 
 function User(){
 }
@@ -12,7 +13,9 @@ Object.defineProperty(User, 'collection', {
 
 User.findById = function(id, cb){
   var _id = Mongo.ObjectID(id);
-  User.collection.findOne({_id:_id}, cb);
+  User.collection.findOne({_id:_id}, function(err, obj){
+    cb(err, _.create(User.prototype, obj));
+  });
 };
 
 User.register = function(o, cb){
@@ -32,5 +35,21 @@ User.authenticate = function(o, cb){
   });
 };
 
-module.exports = User;
+User.prototype.save = function(o, cb){
+  var properties = Object.keys(o),
+      self       = this;
 
+  properties.forEach(function(property){
+    switch(property){
+      case 'visible':
+        self.isVisible = o[property] === 'public';
+        break;
+      default:
+        self[property] = o[property];
+    }
+  });
+
+  User.collection.save(this, cb);
+};
+
+module.exports = User;

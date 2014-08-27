@@ -1,0 +1,29 @@
+extends ../shared/template
+block content
+  h2 #{user.name}'s Profile Page
+  .row
+    .col-xs-6
+      .user
+        .photo(style='background-image:url("#{user.photo}");')
+    .col-xs-6
+       a(href='/profile/edit').btn.btn-primary Edit Profile
+  .row
+    .col-xs-12
+      table.table.table-striped.table-hover.table-bordered
+        thead
+          tr
+            th Email
+            th Phone
+            th Twitter
+            th Facebook
+            th Visible
+        tbody
+            tr
+              td= user.email
+              td= user.phone
+              td= user.twitter
+              td= user.facebook
+              td= user.isVisible
+
+
+block scripts
