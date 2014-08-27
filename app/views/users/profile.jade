@@ -21,8 +21,8 @@ block content
             tr
               td= user.email
               td= user.phone
-              td= user.twitter
-              td= user.facebook
+              td: a(href=user.twitter, target='_blank')= user.twitter
+              td: a(href=user.facebook, target='_blank')= user.facebook
               td= user.isVisible
 
 

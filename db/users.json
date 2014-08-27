@@ -1,11 +1,96 @@
 {
   "_id" : {"$oid":"000000000000000000000001"},
   "email" : "bob@aol.com",
-  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2"
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"bob",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"public"
 }
 {
   "_id" : {"$oid":"000000000000000000000002"},
   "email" : "sue@aol.com",
-  "password" : "$2a$10$sjPx9TkrEASeXzH6uuDCDO.n1Sj/H2A/bu/9hBFfm5fm3Z4LzrEPa"
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"sue",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"private"
 }
-
+{
+  "_id" : {"$oid":"000000000000000000000003"},
+  "email" : "george@aol.com",
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"george",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"public"
+}
+{
+  "_id" : {"$oid":"000000000000000000000004"},
+  "email" : "marni@aol.com",
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"marni",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"private"
+}
+{
+  "_id" : {"$oid":"000000000000000000000005"},
+  "email" : "stuart@aol.com",
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"stuart",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"public"
+}
+{
+  "_id" : {"$oid":"000000000000000000000006"},
+  "email" : "sally@aol.com",
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"sally",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"private"
+}
+{
+  "_id" : {"$oid":"000000000000000000000007"},
+  "email" : "bernard@aol.com",
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"bernard",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"public"
+}
+{
+  "_id" : {"$oid":"000000000000000000000008"},
+  "email" : "bernice@aol.com",
+  "password" : "$2a$10$XR.IQktUUujLBxed70GQn.jWY1wZ9ThM0Tar9wTqzkI4Uk1uP2Or2",
+  "name":"bernice",
+  "phone":"9253242952",
+  "photo":"www.photo.com",
+  "tagline":"I love it",
+  "facebook":"www.facebook.com",
+  "twitter":"www.twitter.com",
+  "isVisible":"private"
+}

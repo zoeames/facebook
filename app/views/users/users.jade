@@ -1,0 +1,24 @@
+extends ../shared/template
+block content
+  h2 Users
+  table.table.table-striped.table-hover.table-bordered
+    thead
+      tr
+        th Name
+        th Email
+        th Phone
+        th Twitter
+        th Facebook
+        th Visible
+    tbody
+      each user in users
+        tr
+          td= user.name
+          td: a(href='/users/#{user.email}')= user.email
+          td= user.phone
+          td: a(href=user.twitter, target='_blank')= user.twitter
+          td: a(href=user.facebook, target='_blank')= user.facebook
+          td= user.isVisible
+
+
+block scripts

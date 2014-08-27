@@ -52,4 +52,34 @@ User.prototype.save = function(o, cb){
   User.collection.save(this, cb);
 };
 
+User.find = function(thing, cb){
+  User.collection.find(thing).toArray(cb);
+};
+
+User.findOne = function(thing, cb){
+  User.collection.findOne(thing, cb);
+};
+
+User.prototype.send = function(receiver, obj, cb){
+  switch(obj.mtype){
+  case 'text':
+    sendText(receiver.phone, obj.message, cb);
+    break;
+  case 'email':
+    break;
+  case 'internal':
+  }
+};
+
+
 module.exports = User;
+
+
+function sendText(to, body, cb){
+  // Twilio Credentials
+  var accountSid = 'ACca035d38e32463e09c22b7e7eb40fffd',
+      authToken = process.env.TWILIO,
+      client = require('twilio')(accountSid, authToken);
+
+  client.messages.create({to:to, from: '+17074006195', body:body}, cb);
+}

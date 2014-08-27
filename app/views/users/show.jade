@@ -1,0 +1,50 @@
+extends ../shared/template
+block content
+  h2 #{user.name}'s Profile Page
+  .row
+    .col-xs-6
+      .user
+        .photo(style='background-image:url("#{user.photo}");')
+  .row
+    .col-xs-12
+      table.table.table-striped.table-hover.table-bordered
+        thead
+          tr
+            th Email
+            th Phone
+            th Twitter
+            th Facebook
+            th Visible
+        tbody
+            tr
+              td= user.email
+              td= user.phone
+              td: a(href=user.twitter, target='_blank')= user.twitter
+              td: a(href=user.facebook, target='_blank')= user.facebook
+              td= user.isVisible
+
+
+  .row
+    .col-xs-6
+      form(role='form', method='post', action='/message/#{client._id}')
+        .col-xs-4
+          .radio
+            label
+              input(type='radio' name='mtype' value='text' checked=true)
+              span Text
+        .col-xs-4
+          .radio
+            label
+              input(type='radio' name='mtype' value='email')
+              span Email
+        .col-xs-4
+          .radio
+            label
+              input(type='radio' name='mtype' value='internal')
+              span Internal
+        .form-group
+          label(for='name') Message
+          textarea.form-control#message(name='message')
+        button.btn.btn-primary(type='submit') Submit
+
+block scripts

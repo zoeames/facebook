@@ -68,6 +68,58 @@ describe('users', function(){
       });
     });
   });
+  describe('get /users', function(){
+    it('should show all public users on a page', function(done){
+      request(app)
+      .get('/users')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('bob');
+        expect(res.text).to.not.include('sue');
+        done();
+      });
+    });
+  });
+
+  describe('get /users/bob@aol.com', function(){
+    it('should show a public user page', function(done){
+      request(app)
+      .get('/users/bob@aol.com')
+      .set('cookie', cookie)
+      .end(function(err, res){
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('bob@aol.com');
+        done();
+      });
+    });
+  });
+  describe('post /message/000000000000000000000003', function(){
+    it('should send a user a message', function(done){
+      request(app)
+      .post('/message/000000000000000000000002')
+      .set('cookie', cookie)
+      .send('mtype=text&message=hey')
+      .end(function(err, res){
+        expect(res.status).to.equal(302);
+        expect(res.headers.location).to.equal('/users/sue@aol.com');
+        done();
+      });
+    });
+  });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

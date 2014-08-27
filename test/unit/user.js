@@ -7,7 +7,7 @@ var expect    = require('chai').expect,
     User      = require('../../app/models/user'),
     dbConnect = require('../../app/lib/mongodb'),
     cp        = require('child_process'),
-    db        = 'template-test';
+    db        = 'facebook-test';
 
 describe('User', function(){
   before(function(done){
@@ -39,6 +39,15 @@ describe('User', function(){
         expect(user.isVisible).to.be.true;
         expect(user.foo).to.equal('bar');
         expect(user.baz).to.equal('bim');
+      });
+    });
+  });
+
+  describe('.find', function(){
+    it('should find all public users', function(done){
+      User.find({isVisible:'public'}, function(err, users){
+        expect(users).to.have.length(4);
+        done();
       });
     });
   });
