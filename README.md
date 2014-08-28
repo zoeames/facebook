@@ -1,7 +1,7 @@
 ## name of project
 ### Code Badges
-build status icon
-coverage status icon
+[![Build Status](https://travis-ci.org/zoeames/facebook.svg?branch=master)](https://travis-ci.org/zoeames/facebook)
+[![Coverage Status](https://coveralls.io/repos/zoeames/facebook/badge.png)](https://coveralls.io/r/zoeames/facebook)
 
 ### About
 write a description about your project
