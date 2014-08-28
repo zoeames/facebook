@@ -82,6 +82,10 @@ function sendText(to, body, cb){
       from       = process.env.FROM,
       client     = require('twilio')(accountSid, authToken);
 
+
+  console.log('--------------debug------');
+  console.log(process.env.TWSID, process.env.TWTOK, process.env.FROM);
+
   client.messages.create({to:to, from:from, body:body}, cb);
 }
 
