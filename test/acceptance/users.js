@@ -82,18 +82,6 @@ describe('users', function(){
     });
   });
 
-  describe('get /users/bob@aol.com', function(){
-    it('should show a public user page', function(done){
-      request(app)
-      .get('/users/bob@aol.com')
-      .set('cookie', cookie)
-      .end(function(err, res){
-        expect(res.status).to.equal(200);
-        expect(res.text).to.include('bob@aol.com');
-        done();
-      });
-    });
-  });
   describe('post /message/000000000000000000000003', function(){
     it('should send a user a message', function(done){
       request(app)

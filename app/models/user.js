@@ -74,12 +74,14 @@ User.prototype.send = function(receiver, obj, cb){
 
 module.exports = User;
 
-
 function sendText(to, body, cb){
-  // Twilio Credentials
-  var accountSid = 'ACca035d38e32463e09c22b7e7eb40fffd',
-      authToken = process.env.TWILIO,
-      client = require('twilio')(accountSid, authToken);
+  if(!to){return cb();}
 
-  client.messages.create({to:to, from: '+17074006195', body:body}, cb);
+  var accountSid = process.env.TWSID,
+      authToken  = process.env.TWTOK,
+      from       = process.env.FROM,
+      client     = require('twilio')(accountSid, authToken);
+
+  client.messages.create({to:to, from:from, body:body}, cb);
 }
+
